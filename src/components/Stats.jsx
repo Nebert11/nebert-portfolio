@@ -6,26 +6,26 @@ const Stats = () => {
             <p className="text-center text-2xl">
                 <strong>6</strong> 
                 <br />
-                <p className="text-gray-500">Finished Projects</p>
+                <span className="text-gray-500">Finished Projects</span>
                 
             </p>
 
             <p className="text-center text-2xl">
                 <strong>225</strong>
                 <br />
-                <p className="text-gray-500">Working Hours</p>
+                <span className="text-gray-500">Working Hours</span>
             </p>
 
             <p className="text-center text-2xl">
                 <strong>10</strong>
                 <br />
-                <p className="text-gray-500">Online Support</p>
+                <span className="text-gray-500">Online Support</span>
             </p>
 
             <p className="text-center text-2xl">
                 <strong>5</strong>
                 <br />
-                <p className="text-gray-500">Happy Customers</p>
+                <span className="text-gray-500">Happy Customers</span>
             </p>
         </div>
     )

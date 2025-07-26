@@ -6,31 +6,58 @@ import image4 from '../assets/image/image4.jpeg';
 import image5 from '../assets/image/image5.jpeg';
 import image6 from '../assets/image/image6.jpeg';
 
+const images = [image1, image2, image3, image4, image5, image6];
+
 const Portfolio = () => {
   const dragRef = useRef(null);
-  const spinRef = useRef(null);
-// const containerRef = useRef(null);
+  const containerRef = useRef(null);
 
   useEffect(() => {
-    // const container = containerRef.current;
-    // const imageElements = container.querySelectorAll("img");
-
-    // let radius, imgWidth, imgHeight;
-    // const screenWidth = window.innerWidth;
-
-    // if (screenWidth < 64) {
-    //     radius= 180;
-    //     imgWidth= 70;
-    //     imgHeight= 100;
-    // }
-
-    let radius = 380;
+    // Add these lines:
     const autoRotate = true;
     const rotateSpeed = -60;
-    const imgWidth = 100;
-    const imgHeight = 140;
 
-    const ospin = spinRef.current;
+    const container = containerRef.current;
+    if (!container) return; // Prevent null errors
+
+    const imageElements = container.querySelectorAll("img");
+
+    let radius, imgWidth, imgHeight;
+    const screenWidth = window.innerWidth;
+
+    if (screenWidth < 64) {
+        radius= 180;
+        imgWidth= 70;
+        imgHeight= 100;
+    }
+    else if (screenWidth < 1024) {
+      radius = 280;
+      imgWidth = 90;
+      imgHeight = 130;
+    }
+    else {
+      radius = 350;
+      imgWidth = 100;
+      imgHeight = 140;
+    }
+    // const rotateCarousel = () => {
+    //     imageElements.forEach((img, i) => {
+    //         const angle = (i * 360) / imageElements.length;
+    //         img.style.transform = `rotateY(${angle}deg) translateZ(${radius}px)`;
+    //     });
+    // };
+
+    // rotateCarousel();
+
+    // let x
+
+    // let radius = 380;
+    // const autoRotate = true;
+    // const rotateSpeed = -60;
+    // const imgWidth = 100;
+    // const imgHeight = 140;
+
+    const ospin = containerRef.current;
     const odrag = dragRef.current;
 
     const aImg = ospin.querySelectorAll("img");
@@ -117,23 +144,37 @@ const Portfolio = () => {
     init();
   }, []);
 
-  const images = [image1, image2, image3, image4, image5, image6];
-
   return (
-    <section id="portfolio" className="bg-gray-400 text-white py-20 text-center overflow-hidden h-screen "> 
+    <section id="portfolio" className="bg-gray-400 text-white py-20 text-center overflow-hidden min-h-[100vh] sm:min-h-[110vh] lg:min-h-[120vh]">
       <h2 className="text-3xl font-bold mb-12">My Successful Work</h2>
+      {/* Grid for small screens, hide on medium and up */}
+      <div className="grid grid-cols-3 gap-4 sm:hidden px-4">
+        {images.map((src, i) => (
+          <img
+            key={i}
+            src={src}
+            alt={`Project ${i + 1}`}
+            className="w-full h-32 object-cover rounded shadow"
+          />
+        ))}
+      </div>
+      {/* Carousel for medium and up, hide on small */}
       <div
         id="drag-container"
         ref={dragRef}
-        className="relative w-full h-full mx-auto flex items-center justify-center transform-style preserve-3d perspective-[1000px]"
+        className="relative w-full h-full mx-auto items-center justify-center transform-style preserve-3d perspective-[1000px] hidden sm:flex"
       >
-        <div id="spin-container" ref={spinRef} className="absolute">
+        <div
+          id="spin-container"
+          ref={containerRef}
+          className="absolute"
+        >
           {images.map((src, i) => (
             <img
               key={i}
               src={src}
               alt={`Project ${i + 1}`}
-              className="absolute w-[100px] h-[140px] object-cover shadow-lg transition-all duration-700"
+              className="absolute w-[70px] h-[100px] sm:w-[90px] sm:h-[130px] lg:w-[100px] lg:h-[140px] object-cover shadow-lg transition-all duration-700"
             />
           ))}
           <p className="absolute top-[100%] left-1/2 -translate-x-1/2 -translate-y-1/2 rotate-x-90 text-white font-serif">
