@@ -29,7 +29,7 @@ const About = () => {
             <strong className="text-gray-400">Phone:</strong> +254769232512
           </p>
           <p className="text-white text-sm sm:text-base">
-            <strong className="text-gray-400">LinkedIn:</strong> ngarinebert2020@gmail.com
+            <strong className="text-gray-400">LinkedIn:</strong> <a href="https://www.linkedin.com/in/nebert-ngari-3b946a234/">Nebert Ngari</a>
           </p>
         </div>
       </div>
