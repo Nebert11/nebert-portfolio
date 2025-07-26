@@ -20,8 +20,8 @@ const Home = () => {
                     />
                 </h2> 
                 <p className="mt-4 text-lg text-gray-400 mb-6">I build clean, responsive websites and web apps using modern tech. Let''s turn your ideas into elegant digital solutions.</p>
-                <a href="#projects" className="inline-block border border-blue-600 text-blue-600 px-6 py-2 rounded-md hover:bg-blue-600 hover:text-white transition-all duration-300">View my work</a>
-                <a href="#" className="inline-block border border-blue-600 text-blue-600 px-6 py-2 rounded-md ml-5 hover:bg-blue-600 hover:text-white transition-all duration-300">Download CV</a>
+                <a href="#projects" download className="inline-block border border-blue-600 text-blue-600 px-6 py-2 rounded-md hover:bg-blue-600 hover:text-white transition-all duration-300">View my work</a>
+                <a href="/cv.pdf" className="inline-block border border-blue-600 text-blue-600 px-6 py-2 rounded-md ml-5 hover:bg-blue-600 hover:text-white transition-all duration-300">Download CV</a>
             </div>
 
             {/*Image Section*/}
