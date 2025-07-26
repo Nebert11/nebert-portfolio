@@ -1,12 +1,9 @@
 import React, { useEffect, useRef } from "react";
-import image1 from '../assets/image/image1.jpeg';
-import image2 from '../assets/image/image2.webp';
-import image3 from '../assets/image/image3.webp';
-import image4 from '../assets/image/image4.jpeg';
-import image5 from '../assets/image/image5.jpeg';
-import image6 from '../assets/image/image6.jpeg';
+import image1 from '../assets/image/image1.JPG';
+import image2 from '../assets/image/image2.JPG';
+import image3 from '../assets/image/image3.JPG';
 
-const images = [image1, image2, image3, image4, image5, image6];
+// const images = [image1, image2, image3, image4, image5, image6];
 
 // const Portfolio = () => {
 //   const dragRef = useRef(null);
@@ -172,19 +169,12 @@ const images = [image1, image2, image3, image4, image5, image6];
 
 const Portfolio = () => {
     return (
-        <section className="bg-gray-400 p-4 text-white">
+        <section className="p-4 text-white">
             <h1 className="text-center font-bold text-3xl mb-4">My Successful Work </h1>
-            <div className="grid grid-cols-2 gap-x-2 md:grid-cols-3 gap-y-4 max-w-6xl  mx-auto">
-                {[image1, image2, image3, image4, image5, image6].map((img, index) => (
-                    <img key={index} src={img} className="rounded-lg shadow-lg tilt-hover" />
+            <div className="justify-center items-center grid grid-cols-2 gap-x-2 md:grid-cols-3 sm:grid-cols gap-y-4 max-w-6xl  mx-auto">
+                {[image1, image2, image3].map((img, index) => (
+                    <img key={index} src={img} className="rounded-lg shadow-lg tilt-hover h-60 w-90" />
                 ))}
-                
-                {/* <img key={index} src={image1} className="w-80 rounded-lg shadow-lg hover:scale-105 transition-transform duration 300" />
-                <img src={image2} className="w-80 rounded-lg shadow-lg hover:scale-105 transition-transform duration 300" />
-                <img src={image3} className="w-80 rounded-lg shadow-lg hover:scale-105 transition-transform duration 300" />
-                <img src={image4} className="w-80 rounded-lg shadow-lg hover:scale-105 transition-transform duration 300" />
-                <img src={image5} className="w-80 rounded-lg shadow-lg hover:scale-105 transition-transform duration 300" />
-                <img src={image6} className="w-80 rounded-lg shadow-lg hover:scale-105 transition-transform duration 300" /> */}
             </div>
         </section>
     )

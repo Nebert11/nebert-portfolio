@@ -9,15 +9,21 @@ const projects = [
     },
     {
         title: "Germinia School",
-        description:"Germinia School is an online Learning Module System for learning german language. It offers an environment for studying as per the student's flexibility",        
+        description:"Germinia School is an online Learning Module System for learning german language. It offers an environment for studying as per the student's flexibility and  as per the tutors scheduled online classes.",        
         button:<a href="#">Explore</a>,
         delay:100,
     },
     {
         title: "FoodEx",
-        description:"Foodex is a website that allows users to order veggies, fruits, e.t.c at the comfort of their home. Foodex sends an order notification to the owners for delivery and the order is processed and delivered fast.",
+        description:"Foodex is a website that allows users to order meat, veggetables, and fruits at the comfort of their home. Foodex sends an order notification to the owners for delivery and the order is processed and delivered fast.",
         button:<a href="#">Explore</a>,
         delay:200,
+    },
+    {
+        title: "Security & Networking",
+        description: "Network infrastructure installation at Ol Pejeta Conservancy new security camp. I did a survey and designed the cable tracks and and the position of the CCTV cameras. I afterwards did the installations.",
+        button:<a href="#">Explore</a>,
+        delay:300,
     }
 ]
 
@@ -25,7 +31,7 @@ const Projects = () => {
 
     return (
         <div className="min-h-screen bg-gray-200 px-4 py-16">
-            <h2 className="text-4xl font-bold text-center text-gray-800 mb-10">Projects</h2>
+            <h2 className="text-4xl font-bold text-center text-gray-800 mb-5">Projects</h2>
             <div className="flex flex-wrap justify-center gap-6 max-w-6xl mx-auto">
                 {projects.map((project, index) => (
                     <div 
