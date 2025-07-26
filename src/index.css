@@ -60,3 +60,13 @@
     transform: rotateY(0deg);
   }
 }
+
+
+.tilt-hover{
+    transition: transform 0.5s ease;
+    transform-style: preserve-3d;
+}
+
+.tilt-hover:hover {
+    transform: rotateY(20deg) rotateX(5deg);
+}
