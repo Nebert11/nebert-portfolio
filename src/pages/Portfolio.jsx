@@ -171,7 +171,7 @@ const Portfolio = () => {
     return (
         <section className="p-4 text-white">
             <h1 className="text-center font-bold text-3xl mb-4">My Successful Work </h1>
-            <div className="justify-center items-center grid grid-cols-2 gap-x-2 md:grid-cols-3 sm:grid-cols gap-y-4 max-w-6xl  mx-auto">
+            <div className="justify-center items-center grid grid-cols-1 gap-x-2 md:grid-cols-3 sm:grid-cols-3 gap-y-4 max-w-6xl  mx-auto">
                 {[image1, image2, image3].map((img, index) => (
                     <img key={index} src={img} className="rounded-lg shadow-lg tilt-hover h-60 w-90" />
                 ))}
