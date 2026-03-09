@@ -2,7 +2,7 @@ import image1 from '../assets/image/image1.JPG';
 import image2 from '../assets/image/image2.JPG';
 import image3 from '../assets/image/image3.JPG';
 import image4 from "../assets/image/quick.jpg";
-import image5 from '../assets/image/travelbuddies.jpg';
+import image5 from '../assets/image/travelbuddies.JPG';
 
 
 const Portfolio = () => {
