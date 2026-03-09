@@ -24,7 +24,7 @@ const Home = () => {
                 <p className="text-base sm:text-lg text-gray-400 mb-6">I build clean, responsive websites and web apps using modern tech. Let's turn your ideas into elegant digital solutions.</p>
                 <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-5">
                     <a href="#projects" className="inline-block border border-blue-600 text-blue-600 px-6 py-2 rounded-md hover:bg-blue-600 hover:text-white transition-all duration-300 text-center">View my work</a>
-                    <a href={cvPdf} target="_blank" rel="noopener noreferrer" className="inline-block border border-blue-600 text-blue-600 px-6 py-2 rounded-md hover:bg-blue-600 hover:text-white transition-all duration-300 text-center">Download CV</a>
+                    <a href={cvPdf}  className="inline-block border border-blue-600 text-blue-600 px-6 py-2 rounded-md hover:bg-blue-600 hover:text-white transition-all duration-300 text-center">Download CV</a>
                 </div>
                 
             </div>
