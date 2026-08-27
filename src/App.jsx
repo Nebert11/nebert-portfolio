@@ -12,15 +12,17 @@ import Testimonials from './pages/Testimonials';
 function App() {
 
   return (
-    <div className='font-sans'>
+    <div className='site-shell'>
       <Navbar />
-      <section id='home'> <Home /> </section>
-      <section id='projects'> <Projects /> </section>
-      <section id='about'><About /></section>
+      <main>
+        <section id='home'><Home /></section>
+        <section id='projects'><Projects /></section>
+        <section id='about'><About /></section>
       <Stats />
-      <section id='portfolio'><Portfolio /></section>
-      <section id='contact'><Contacts /></section>
-      <section id='testimonials'><Testimonials/></section>
+        <section id='portfolio'><Portfolio /></section>
+        <section id='testimonials'><Testimonials/></section>
+        <section id='contact'><Contacts /></section>
+      </main>
 
       <Footer />
     </div>

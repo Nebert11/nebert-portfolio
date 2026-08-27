@@ -1,27 +1,4 @@
-import image1 from '../assets/image/image1.JPG';
-import image2 from '../assets/image/image2.JPG';
-import image3 from '../assets/image/image3.JPG';
-import image4 from "../assets/image/quick.jpg";
-import image5 from '../assets/image/travelbuddies.JPG';
-import image6 from "../assets/image/plantend.jpg";
-
-
-const Portfolio = () => {
-    return (
-        <section className="p-4 text-white">
-            <h1 className="text-center font-bold text-3xl mb-4">My Successful Work </h1>
-            <div className="justify-center grid grid-cols-1 gap-x-2 md:grid-cols-3 sm:grid-cols-3 sm:items-center gap-y-4 max-w-6xl mx-auto">
-                {[image1, image2, image3, image4, image5, image6].map((img, index) => (
-                    <img
-                        key={index}
-                        src={img}
-                        alt={`project-${index}`}
-                        className="rounded-lg shadow-lg tilt-hover h-60 w-90"
-                    />
-                ))}
-            </div>
-        </section>
-    )
-}
-
+import React from "react";
+import image1 from '../assets/image/image1.JPG'; import image2 from '../assets/image/image2.JPG'; import image3 from '../assets/image/image3.JPG'; import image4 from "../assets/image/quick.jpg"; import image5 from '../assets/image/travelbuddies.JPG'; import image6 from "../assets/image/plantend.jpg";
+const Portfolio = () => <div className="gallery section-pad"><div className="section-wrap"><div className="section-heading"><div><p className="eyebrow">The wider picture <span className="eyebrow-line" /></p><h2>Work in <em>motion.</em></h2></div><p className="section-intro">A visual index of ideas, experiments, and shipped work.</p></div></div><div className="gallery-track">{[image1,image2,image3,image4,image5,image6].map((img,index)=><img key={img} src={img} alt={`Work sample ${index + 1}`} loading="lazy" />)}</div></div>;
 export default Portfolio;

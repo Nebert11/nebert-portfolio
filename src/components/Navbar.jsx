@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { Menu, X } from "lucide-react"; // You can also use Heroicons or any icon lib
+import { ArrowUpRight, Menu, X } from "lucide-react";
 
 const Navbar = () => {
   const [activeSection, setActiveSection] = useState("home");
   const [isOpen, setIsOpen] = useState(false);
 
   const handleScroll = () => {
-    const sections = ["home", "projects", "about", "contact"];
-    const scrollY = window.scrollY + 200;
+    const sections = ["home", "projects", "about", "portfolio", "contact"];
+    const scrollY = window.scrollY + 160;
 
     for (let id of sections) {
       const el = document.getElementById(id);
@@ -24,54 +24,49 @@ const Navbar = () => {
   }, []);
 
   const navItems = [
-    { id: "home", label: "Home" },
-    { id: "projects", label: "Projects" },
     { id: "about", label: "About" },
-    { id: "portfolio", label: "Portfolio" },
-    { id: "testimonials", label: "Testimonials" },
+    { id: "projects", label: "Work" },
+    { id: "portfolio", label: "Toolkit" },
     { id: "contact", label: "Contact" },
   ];
 
   return (
-    <nav className="fixed top-0 w-full text-white shadow-md z-50 bg-[#01574e]">
-      <div className="flex justify-between items-center px-6 py-4 mx-auto max-w-7xl">
-        <h1 className="text-lg font-bold">nebert</h1>
+    <nav className="nav-bar">
+      <div className="nav-inner">
+        <a className="wordmark" href="#home" aria-label="Nebert Kuria home"><span>n</span>ebert.</a>
 
         {/* Hamburger Icon */}
-        <div className="md:hidden">
-          <button onClick={() => setIsOpen(!isOpen)} className="focus:outline-none">
+        <div className="mobile-toggle">
+          <button onClick={() => setIsOpen(!isOpen)} aria-label={isOpen ? "Close menu" : "Open menu"} aria-expanded={isOpen}>
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
 
         {/* Desktop Menu */}
-        <ul className="hidden md:flex space-x-6 mr-5">
+        <ul className="nav-links">
           {navItems.map((item) => (
             <li key={item.id}>
               <a
                 href={`#${item.id}`}
-                className={`hover:text-blue-400 transition ${
-                  activeSection === item.id ? "text-blue-300 font-semibold" : ""
-                }`}
+                className={activeSection === item.id ? "active" : ""}
               >
                 {item.label}
               </a>
             </li>
           ))}
         </ul>
+        <a className="nav-cta" href="#contact">Let's talk <ArrowUpRight size={15} /></a>
       </div>
 
       {/* Mobile Dropdown Menu */}
       {isOpen && (
-        <ul className="md:hidden flex flex-col items-center space-y-4 pb-4 bg-[#01574e] transition-all duration-300">
+        <ul className="mobile-menu">
           {navItems.map((item) => (
             <li key={item.id}>
               <a
                 href={`#${item.id}`}
-                className={`hover:text-blue-400 transition ${
-                  activeSection === item.id ? "text-blue-300 font-semibold" : ""
-                }`}
-                onClick={() => setIsOpen(false)} // close menu on click
+                className={activeSection === item.id ? "active" : ""}
+                onClick={() => setIsOpen(false)}
               >
                 {item.label}
               </a>
