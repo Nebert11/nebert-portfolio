@@ -1,39 +1,17 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { ArrowUpRight, Menu, X } from "lucide-react";
 
 const Navbar = () => {
-  const [activeSection, setActiveSection] = useState("home");
   const [isOpen, setIsOpen] = useState(false);
 
-  const handleScroll = () => {
-    const sections = ["home", "projects", "about", "portfolio", "contact"];
-    const scrollY = window.scrollY + 160;
-
-    for (let id of sections) {
-      const el = document.getElementById(id);
-      if (el && el.offsetTop <= scrollY && el.offsetTop + el.offsetHeight > scrollY) {
-        setActiveSection(id);
-        break;
-      }
-    }
-  };
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   const navItems = [
-    { id: "about", label: "About" },
-    { id: "projects", label: "Work" },
-    { id: "portfolio", label: "Toolkit" },
-    { id: "contact", label: "Contact" },
+    { id: "home", label: "Home" }, { id: "about", label: "About" }, { id: "projects", label: "Projects" }, { id: "experience", label: "Experience" }, { id: "contact", label: "Contact" },
   ];
 
   return (
     <nav className="nav-bar">
       <div className="nav-inner">
-        <a className="wordmark" href="#home" aria-label="Nebert Kuria home"><span>n</span>ebert.</a>
+        <a className="wordmark" href="/" aria-label="Nebert Kuria home"><span>nebert</span></a>
 
         {/* Hamburger Icon */}
         <div className="mobile-toggle">
@@ -47,15 +25,14 @@ const Navbar = () => {
           {navItems.map((item) => (
             <li key={item.id}>
               <a
-                href={`#${item.id}`}
-                className={activeSection === item.id ? "active" : ""}
+                href={`/${item.id}`}
               >
                 {item.label}
               </a>
             </li>
           ))}
         </ul>
-        <a className="nav-cta" href="#contact">Let's talk <ArrowUpRight size={15} /></a>
+        <a className="nav-cta" href="/contact">Let's talk <ArrowUpRight size={15} /></a>
       </div>
 
       {/* Mobile Dropdown Menu */}
@@ -64,8 +41,7 @@ const Navbar = () => {
           {navItems.map((item) => (
             <li key={item.id}>
               <a
-                href={`#${item.id}`}
-                className={activeSection === item.id ? "active" : ""}
+                href={`/${item.id}`}
                 onClick={() => setIsOpen(false)}
               >
                 {item.label}
