@@ -11,7 +11,7 @@ const Home = () => {
                 <p className="hero-lede">I build modern, responsive and accessible web applications that solve real problems and create exceptional experiences.</p>
                 <div className="hero-actions">
                     <a className="button button-primary" href="/projects">View my work <ArrowUpRight size={16} /></a>
-                    <a className="button button-outline" href="/src/assets/NEBERT_KURIA_Frontend_CV.pdf">Download CV <Download size={15} /></a>
+                    <a className="button button-outline" href="/assets/NEBERT_KURIA_Frontend_CV.pdf">Download CV <Download size={15} /></a>
                 </div>
                 <div className="hero-stack"><span>Tech stack</span><div className="stack-icons"><span title="React"><Layers3 size={19} /></span><span title="Next.js"><Code2 size={18} /></span><span title="TypeScript"><GitBranch size={18} /></span><span title="Tailwind CSS"><Zap size={18} /></span><span title="JavaScript"><span className="js-mark">JS</span></span><span title="PHP"><span className="php-mark">php</span></span><span title="Laravel"><Figma size={18} /></span><span title="MySQL"><Database size={18} /></span></div></div>
             </div>
